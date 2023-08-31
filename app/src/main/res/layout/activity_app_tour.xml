@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".nav_fragments.apptour.AppTourActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpAppTour"
+        android:layout_width="match_parent"
+        android:layout_height="710dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+      <ImageView
+          android:id="@+id/ivdot1"
+          android:layout_width="25dp"
+          android:layout_height="match_parent"
+          android:background="@drawable/dark_dot"/>
+
+        <ImageView
+            android:id="@+id/ivdot2"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/light_dot"
+            android:layout_marginHorizontal="10dp"/>
+
+        <ImageView
+            android:id="@+id/ivdot3"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/light_dot"/>
+
+    </LinearLayout>
+
+</LinearLayout>

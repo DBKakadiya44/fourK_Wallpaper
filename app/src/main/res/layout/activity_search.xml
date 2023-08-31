@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:background="@color/main_bg_black"
+    tools:context=".main.fragments.search.SearchActivity">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/back_aerrow" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/text_border_bg"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="Search for Wallpaper"
+                android:lines="1"
+                android:maxLines="1"
+                android:textColorHint="#918F8F"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivSearch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="7dp"
+                android:src="@drawable/search_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="3dp"
+            android:layout_height="20dp"
+            android:src="@drawable/text_line_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/inriasansregular"
+            android:text="Popular Tags"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Amoled"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Black"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Super Heros"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Game"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Anime"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Live"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Vector"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Stock"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Nature"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_marginLeft="4dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="White"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Car"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Space"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Mask"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Neon"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Mountain"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Sports"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Love"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Water Drop"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Nature"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_border_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Candle"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/menu1"
+            android:iconTint="@color/white"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_top_picks"
+            android:icon="@drawable/menu29"
+            android:iconTint="@color/white"
+            android:title="Top Picks" />
+        <item
+            android:id="@+id/nav_lighting_wallpaper"
+            android:icon="@drawable/menu3"
+            android:iconTint="@color/white"
+            android:title="Edge Lighting Wallpaper" />
+        <item
+            android:id="@+id/nav_favorute"
+            android:icon="@drawable/menu4"
+            android:iconTint="@color/white"
+            android:title="My Favorites" />
+        <item
+            android:id="@+id/nav_mydownload"
+            android:icon="@drawable/menu5"
+            android:iconTint="@color/white"
+            android:title="My Downloads" />
+        <item
+            android:id="@+id/nav_auto_change"
+            android:icon="@drawable/menu6"
+            android:iconTint="@color/white"
+            android:title="Auto Change Wallpaper" />
+        <item
+            android:id="@+id/nav_app_tour"
+            android:icon="@drawable/menu7"
+            android:iconTint="@color/white"
+            android:title="App Tour" />
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:icon="@drawable/menu8"
+            android:iconTint="@color/white"
+            android:title="Privacy Policy" />
+        <item
+            android:id="@+id/nav_rate_app"
+            android:icon="@drawable/menu29"
+            android:iconTint="@color/white"
+            android:title="Rate this App" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/menu10"
+            android:iconTint="@color/white"
+            android:title="Sharing is Caring" />
+    </group>
+</menu>
