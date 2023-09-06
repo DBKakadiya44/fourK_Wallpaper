@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4kwallpaper.R;
+import com.example.a4kwallpaper.data.DataList;
 import com.example.a4kwallpaper.main.preview.PreviewActivity;
 
 public class AllImageAdapter extends RecyclerView.Adapter<AllImageAdapter.ImageHolder>
@@ -35,14 +36,12 @@ public class AllImageAdapter extends RecyclerView.Adapter<AllImageAdapter.ImageH
     @Override
     public void onBindViewHolder(@NonNull AllImageAdapter.ImageHolder holder, int position) {
 
-
-//        if(image == 100){
-//            holder.imageView.setImageResource(DataList.catimg1[position]);
-//        }
-//        else {
-//            holder.imageView.setImageResource(image);
-//        }
-        holder.imageView.setImageResource(image);
+        if(image == 100){
+            holder.imageView.setImageResource(DataList.catimg1[position]);
+        }
+        else {
+            holder.imageView.setImageResource(image);
+        }
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,15 +50,11 @@ public class AllImageAdapter extends RecyclerView.Adapter<AllImageAdapter.ImageH
                 context.startActivity(intent);
             }
         });
-
-
     }
-
     @Override
     public int getItemCount() {
         return 12;
     }
-
     public class ImageHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         public ImageHolder(@NonNull View itemView) {

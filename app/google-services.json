@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1051868119165",
+    "project_id": "k-wallpaper-ba693",
+    "storage_bucket": "k-wallpaper-ba693.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051868119165:android:595b80d30d247004383114",
+        "android_client_info": {
+          "package_name": "com.example.a4kwallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051868119165-06itskdi1tvqcfum3b0krhh4s69irik0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNf-MZDAWAvvLmmVkGBq7v2Of70yCBBB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051868119165-06itskdi1tvqcfum3b0krhh4s69irik0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

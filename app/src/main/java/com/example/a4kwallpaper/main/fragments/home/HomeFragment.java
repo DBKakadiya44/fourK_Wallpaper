@@ -32,13 +32,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = HomeFragmentBinding.inflate(inflater,container,false);
 
+        //for left to right transaction
 
-        // Calculate the target scroll position
-        // Adjust the duration and distance as needed
         targetScrollX = 1650;
-        int animationDuration = 15000; // in milliseconds
+        int animationDuration = 10000; // in milliseconds
 
-        // Create a ValueAnimator to animate the scroll
         ValueAnimator animator = ValueAnimator.ofInt(0, targetScrollX);
         animator.setDuration(animationDuration);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

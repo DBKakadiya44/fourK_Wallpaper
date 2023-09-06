@@ -4,12 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:id="@+id/conLayout"
     tools:context=".main.preview.PreviewActivity">
 
     <ImageView
         android:id="@+id/ivPreviewFullImage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_margin="30dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:src="@color/main_bg_black"/>
+
 
 </LinearLayout>

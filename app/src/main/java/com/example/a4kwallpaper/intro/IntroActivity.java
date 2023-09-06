@@ -1,10 +1,11 @@
 package com.example.a4kwallpaper.intro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.a4kwallpaper.R;
 import com.example.a4kwallpaper.databinding.ActivityIntroBinding;
@@ -24,6 +25,35 @@ public class IntroActivity extends AppCompatActivity {
 
         IntroPagerAdapter pagerAdapter = new IntroPagerAdapter(IntroActivity.this);
         binding.viewPager.setAdapter(pagerAdapter);
+
+        binding.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 0) {
+                    binding.ivdot1.setBackgroundResource(R.drawable.dark_bule_dot);
+                    binding.ivdot2.setBackgroundResource(R.drawable.blue_dot);
+                    binding.ivdot3.setBackgroundResource(R.drawable.blue_dot);
+                }
+                if (position == 1) {
+                    binding.ivdot1.setBackgroundResource(R.drawable.blue_dot);
+                    binding.ivdot2.setBackgroundResource(R.drawable.dark_bule_dot);
+                    binding.ivdot3.setBackgroundResource(R.drawable.blue_dot);
+                }
+                if (position == 2) {
+                    binding.ivdot1.setBackgroundResource(R.drawable.blue_dot);
+                    binding.ivdot2.setBackgroundResource(R.drawable.blue_dot);
+                    binding.ivdot3.setBackgroundResource(R.drawable.dark_bule_dot);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state)
+            {
+            }
+        });
 
 
         binding.ivnext.setOnClickListener(new View.OnClickListener() {
