@@ -1,12 +1,11 @@
 package com.example.a4kwallpaper.nav_fragments.toppicks;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.a4kwallpaper.databinding.ActivityTopPicksBinding;
-import com.example.a4kwallpaper.main.fragments.home.adapter.AllImageAdapter;
 
 public class TopPicksActivity extends AppCompatActivity {
 
@@ -24,10 +23,10 @@ public class TopPicksActivity extends AppCompatActivity {
             }
         });
 
-        AllImageAdapter allImageAdapter = new AllImageAdapter(TopPicksActivity.this,100);
-        RecyclerView.LayoutManager manager1 = new GridLayoutManager(TopPicksActivity.this,3);
-        binding.rvTopPicks.setLayoutManager(manager1);
-        binding.rvTopPicks.setAdapter(allImageAdapter);
+//        AllImageAdapter allImageAdapter = new AllImageAdapter(TopPicksActivity.this,100);
+//        RecyclerView.LayoutManager manager1 = new GridLayoutManager(TopPicksActivity.this,3);
+//        binding.rvTopPicks.setLayoutManager(manager1);
+//        binding.rvTopPicks.setAdapter(allImageAdapter);
 
     }
 }

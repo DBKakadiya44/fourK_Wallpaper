@@ -1,51 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
 
     <TextView
-        android:visibility="invisible"
         android:id="@+id/tvOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_gravity="end"
+        android:background="@drawable/black_border"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="3dp"
         android:text="OK"
         android:textColor="@color/black"
-        android:layout_gravity="end"
-        android:textSize="20dp"
-        android:paddingVertical="5dp"
-        android:layout_margin="20dp"
-        android:paddingHorizontal="22dp"
-        android:background="@drawable/black_border"/>
-    
+        android:textSize="18dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/ivapptoup"
-        android:layout_width="400dp"
-        android:layout_height="500dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/tvtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOK" />
 
     <TextView
         android:id="@+id/tvtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="4K Wallpaper"
-        android:textSize="30sp"
         android:fontFamily="@font/inriasansbold"
-        android:textColor="@color/black"
         android:gravity="center"
-        android:layout_marginTop="30dp"/>
+        android:text="4K Wallpaper"
+        android:layout_marginBottom="6dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cool Wallpaper are designed to fit your android mobile devices"
-        android:textSize="15sp"
-        android:fontFamily="@font/inriasansbold"
-        android:textColor="@color/black"
         android:layout_marginHorizontal="50dp"
+        android:fontFamily="@font/inriasansbold"
         android:gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:text="Cool Wallpaper are designed to fit your android mobile devices"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

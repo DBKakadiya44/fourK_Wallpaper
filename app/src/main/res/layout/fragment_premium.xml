@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main_bg_black"
     android:orientation="vertical"
     android:paddingHorizontal="20dp"
@@ -23,16 +24,48 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:fontFamily="@font/inriasansregular"
-            android:text="Stock Categories"
+            android:text="Premium Wallpapers"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPremium"
         android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:animateLayoutChanges="true"
+        android:animationCache="true"
+        app:shimmer_repeat_mode="restart">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/placeholder" />
+
+            <include layout="@layout/placeholder" />
+
+            <include layout="@layout/placeholder" />
+
+            <include layout="@layout/placeholder" />
+
+            <include layout="@layout/placeholder" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    </RelativeLayout>
 
 </LinearLayout>

@@ -11,8 +11,27 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            app:titleTextColor="@color/white"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/black">
+
+
+
+            <ToggleButton
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:background="@drawable/toggle"
+                android:textOff=" "
+                android:textOn=" "
+                android:id="@+id/toggleBtn"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4K Wallpaper"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="30dp"/>
 
             <ImageView
                 android:id="@+id/SearchIcon"

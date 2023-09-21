@@ -1,18 +1,22 @@
 package com.example.a4kwallpaper.splash;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.a4kwallpaper.intro.IntroActivity;
-import com.example.a4kwallpaper.main.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.a4kwallpaper.R;
+import com.example.a4kwallpaper.api.CallbackSettings;
+import com.example.a4kwallpaper.intro.IntroActivity;
+
+import retrofit2.Call;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
     Runnable runnable;
+
+    private Call<CallbackSettings> callbackCall = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

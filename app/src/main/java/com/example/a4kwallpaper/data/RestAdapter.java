@@ -1,6 +1,6 @@
 package com.example.a4kwallpaper.data;
 
-import com.example.a4kwallpaper.api.api_InterFace;
+import com.example.a4kwallpaper.api.Api_InterFace;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RestAdapter {
-    public static api_InterFace createAPI(String baseUrl) {
+    public static Api_InterFace createAPI(String baseUrl) {
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -28,11 +28,11 @@ public class RestAdapter {
                 .client(okHttpClient)
                 .build();
 
-        return retrofit.create(api_InterFace.class);
+        return retrofit.create(Api_InterFace.class);
 
     }
 
-    public static api_InterFace createDownloadApi() {
+    public static Api_InterFace createDownloadApi() {
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -49,7 +49,7 @@ public class RestAdapter {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
-        return retrofit.create(api_InterFace.class);
+        return retrofit.create(Api_InterFace.class);
     }
 
 }
