@@ -7,10 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.a4kwallpaper.R;
 import com.example.a4kwallpaper.main.preview.PreviewActivity;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -58,7 +56,6 @@ public class CategoryAllAdapter extends RecyclerView.Adapter<CategoryAllAdapter.
                 Intent intent = new Intent(context, PreviewActivity.class);
                 intent.putExtra("img",img);
                 context.startActivity(intent);
-
             }
         });
 
@@ -66,7 +63,6 @@ public class CategoryAllAdapter extends RecyclerView.Adapter<CategoryAllAdapter.
 
     @Override
     public int getItemCount() {
-
         return resp.length;
     }
 

@@ -13,7 +13,7 @@ import com.example.a4kwallpaper.api.Api_InterFace;
 import com.example.a4kwallpaper.api.CallbackWallpaper;
 import com.example.a4kwallpaper.data.RestAdapter;
 import com.example.a4kwallpaper.databinding.ActivityMobileImageBinding;
-import com.example.a4kwallpaper.main.fragments.home.adapter.CategoryAllAdapter;
+import com.example.a4kwallpaper.main.fragments.home.adapter.NewAdAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +39,7 @@ public class MobileImageActivity extends AppCompatActivity {
 
         Api_InterFace apiInterface = RestAdapter.createAPI("https://wallapp.patoliyaitsolution.com/");
 
-        callbackCall = apiInterface.getWallpapers(1,50,"both","recent",category);
+        callbackCall = apiInterface.getWallpapers(1,80,"both","recent",category);
         callbackCall.enqueue(new Callback<CallbackWallpaper>() {
             @Override
             public void onResponse(Call<CallbackWallpaper> call, Response<CallbackWallpaper> response) {
@@ -58,11 +58,16 @@ public class MobileImageActivity extends AppCompatActivity {
                         imageArray[i] = "https://wallapp.patoliyaitsolution.com/upload/"+resp.posts.get(i).image_upload;
                     }
 
-                    CategoryAllAdapter allImageAdapter = new CategoryAllAdapter(MobileImageActivity.this, imageArray, binding.shimmerLayout);
-                    RecyclerView.LayoutManager manager1 = new GridLayoutManager(MobileImageActivity.this, 3);
+//                    CategoryAllAdapter allImageAdapter = new CategoryAllAdapter(MobileImageActivity.this, imageArray, binding.shimmerLayout);
+//                    RecyclerView.LayoutManager manager1 = new GridLayoutManager(MobileImageActivity.this, 3);
+//                    binding.rvMobile.setLayoutManager(manager1);
+//                    binding.rvMobile.setAdapter(allImageAdapter);
+//                    binding.rvMobile.setHasFixedSize(true);
+
+                    NewAdAdapter allImageAdapter = new NewAdAdapter(MobileImageActivity.this, imageArray, binding.shimmerLayout);
+                    RecyclerView.LayoutManager manager1 = new GridLayoutManager(MobileImageActivity.this, 2);
                     binding.rvMobile.setLayoutManager(manager1);
                     binding.rvMobile.setAdapter(allImageAdapter);
-                    binding.rvMobile.setHasFixedSize(true);
 
                 } else {
                     Log.d("QQQ", "onResponse : Failed");
@@ -85,7 +90,5 @@ public class MobileImageActivity extends AppCompatActivity {
 
         OnBackPressedDispatcher onBackPressedDispatcher = new OnBackPressedDispatcher();
         onBackPressedDispatcher.onBackPressed();
-
     }
-
 }

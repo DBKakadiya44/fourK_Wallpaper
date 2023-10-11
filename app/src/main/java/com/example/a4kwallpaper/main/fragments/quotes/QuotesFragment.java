@@ -7,15 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4kwallpaper.api.Api_InterFace;
 import com.example.a4kwallpaper.api.CallbackWallpaper;
 import com.example.a4kwallpaper.data.RestAdapter;
 import com.example.a4kwallpaper.databinding.FragmentQuotesBinding;
 import com.example.a4kwallpaper.main.MainActivity;
-import com.example.a4kwallpaper.main.fragments.home.adapter.AllImageAdapter;
+import com.example.a4kwallpaper.main.fragments.home.adapter.NewAdAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -61,17 +61,16 @@ public class QuotesFragment extends Fragment {
                         imageArray[i] = "https://wallapp.patoliyaitsolution.com/upload/"+resp.posts.get(i).image_upload;
                     }
 
-//                    AllImageAdapter allImageAdapter = new AllImageAdapter(mainActivity, imageArray, binding.shimmerLayout);
-//                    RecyclerView.LayoutManager manager1 = new GridLayoutManager(mainActivity, 3);
-//                    binding.rvQuotes.setLayoutManager(manager1);
-//                    binding.rvQuotes.setAdapter(allImageAdapter);
-//                    binding.rvQuotes.setHasFixedSize(true);
+                    NewAdAdapter allImageAdapter = new NewAdAdapter(mainActivity, imageArray, binding.shimmerLayout);
+                    RecyclerView.LayoutManager manager1 = new GridLayoutManager(mainActivity, 2);
+                    binding.rvQuotes.setLayoutManager(manager1);
+                    binding.rvQuotes.setAdapter(allImageAdapter);
 
-                    AllImageAdapter adapter = new AllImageAdapter(mainActivity, imageArray, binding.shimmerLayout);
-                    StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
-                    binding.rvQuotes.setLayoutManager(lm);
-                    binding.rvQuotes.setItemAnimator(new DefaultItemAnimator());
-                    binding.rvQuotes.setAdapter(adapter);
+//                    AllImageAdapter adapter = new AllImageAdapter(mainActivity, imageArray, binding.shimmerLayout);
+//                    StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+//                    binding.rvQuotes.setLayoutManager(lm);
+//                    binding.rvQuotes.setItemAnimator(new DefaultItemAnimator());
+//                    binding.rvQuotes.setAdapter(adapter);
 
                 } else {
                     Log.d("QQQ", "onResponse : Failed");

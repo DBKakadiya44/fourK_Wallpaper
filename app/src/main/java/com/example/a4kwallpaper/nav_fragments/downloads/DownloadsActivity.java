@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4kwallpaper.databinding.ActivityDownloadsBinding;
-import com.example.a4kwallpaper.main.fragments.home.adapter.CategoryAllAdapter;
+import com.example.a4kwallpaper.main.fragments.home.adapter.NewAdAdapter;
+import com.example.a4kwallpaper.main.mobileimage.MobileImageActivity;
 import com.example.a4kwallpaper.main.preview.PreviewActivity;
 
 public class DownloadsActivity extends AppCompatActivity {
@@ -49,11 +50,16 @@ public class DownloadsActivity extends AppCompatActivity {
 
         binding.shimmerLayout.startShimmer();
 
-        CategoryAllAdapter allImageAdapter = new CategoryAllAdapter(DownloadsActivity.this, imageArray, binding.shimmerLayout);
-        RecyclerView.LayoutManager manager1 = new GridLayoutManager(DownloadsActivity.this, 3);
+//        CategoryAllAdapter allImageAdapter = new CategoryAllAdapter(DownloadsActivity.this, imageArray, binding.shimmerLayout);
+//        RecyclerView.LayoutManager manager1 = new GridLayoutManager(DownloadsActivity.this, 3);
+//        binding.rvFavrite.setLayoutManager(manager1);
+//        binding.rvFavrite.setAdapter(allImageAdapter);
+//        binding.rvFavrite.setHasFixedSize(true);
+
+        NewAdAdapter allImageAdapter = new NewAdAdapter(DownloadsActivity.this, imageArray, binding.shimmerLayout);
+        RecyclerView.LayoutManager manager1 = new GridLayoutManager(DownloadsActivity.this, 2);
         binding.rvFavrite.setLayoutManager(manager1);
         binding.rvFavrite.setAdapter(allImageAdapter);
-        binding.rvFavrite.setHasFixedSize(true);
 
     }
 }

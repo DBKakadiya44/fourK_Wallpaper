@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.a4kwallpaper.R;
 import com.example.a4kwallpaper.databinding.ItemImagesBinding;
@@ -23,18 +23,18 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.squareup.picasso.Picasso;
 
-public class AllImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
-{
+public class NewAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
-    String[] image;
+    String[] imageArray;
     ShimmerFrameLayout shimmerLayout;
+
     private static int ITEM_VIEW = 1;
     private static int AD_VIEW = 2;
-    private static int ITEM_FEED_COUNT = 7;
-
-    public AllImageAdapter(Context context, String[] image, ShimmerFrameLayout shimmerLayout) {
-        this.context = context;
-        this.image = image;
+    private static int ITEM_FEED_COUNT = 3;
+    public NewAdAdapter(Context context, String[] imageArray, ShimmerFrameLayout shimmerLayout)
+    {
+        this.context=context;
+        this.imageArray=imageArray;
         this.shimmerLayout=shimmerLayout;
     }
 
@@ -45,16 +45,10 @@ public class AllImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         if (viewType == ITEM_VIEW) {
             view = layoutInflater.inflate(R.layout.item_images, parent, false);
-            return new MainViewHolder(view);
+            return new NewAdAdapter.MainViewHolder(view);
         } else if (viewType == AD_VIEW) {
             view = layoutInflater.inflate(R.layout.native_ad_load, parent, false);
-
-            final ViewGroup.LayoutParams lp = view.getLayoutParams();
-            if (lp instanceof StaggeredGridLayoutManager.LayoutParams) {
-                StaggeredGridLayoutManager.LayoutParams sglp = (StaggeredGridLayoutManager.LayoutParams) lp;
-                sglp.setFullSpan(true);
-            }
-            return new AdsViewHolder(view);
+            return new NewAdAdapter.AdsViewHolder(view);
         } else {
             return null;
         }
@@ -64,13 +58,12 @@ public class AllImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         if (holder.getItemViewType() == ITEM_VIEW) {
-            ((MainViewHolder) holder).bindData(image, position);
+            ((NewAdAdapter.MainViewHolder) holder).bindData(imageArray, position);
 
         } else if (holder.getItemViewType() == AD_VIEW) {
-            ((AdsViewHolder) holder).bindAdData();
+            ((NewAdAdapter.AdsViewHolder) holder).bindAdData();
         }
     }
-
     @Override
     public int getItemViewType(int position) {
 
@@ -80,10 +73,17 @@ public class AllImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             return ITEM_VIEW;
         }
     }
-
     @Override
     public int getItemCount() {
-        return image.length;
+        return imageArray.length;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            imageView = itemView.findViewById(R.id.ivImages);
+        }
     }
 
     public class MainViewHolder extends RecyclerView.ViewHolder {
@@ -97,25 +97,25 @@ public class AllImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         private void bindData(String[] image, int position) {
             Picasso.with(context)
-                .load(image[position])
-                .into(binding.ivImages);
+                    .load(image[position])
+                    .into(binding.ivImages);
 
-        if(binding.ivImages != null){
-            shimmerLayout.stopShimmer();
-            shimmerLayout.setVisibility(View.INVISIBLE);
-        }else {
-            shimmerLayout.setVisibility(View.VISIBLE);
-            shimmerLayout.startShimmer();
-        }
-
-        binding.ivImages.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, PreviewActivity.class);
-                intent.putExtra("img",image[position]);
-                context.startActivity(intent);
+            if(binding.ivImages != null){
+                shimmerLayout.stopShimmer();
+                shimmerLayout.setVisibility(View.INVISIBLE);
+            }else {
+                shimmerLayout.setVisibility(View.VISIBLE);
+                shimmerLayout.startShimmer();
             }
-        });
+
+            binding.ivImages.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, PreviewActivity.class);
+                    intent.putExtra("img",image[position]);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 

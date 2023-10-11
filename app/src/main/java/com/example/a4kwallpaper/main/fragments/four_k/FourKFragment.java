@@ -7,15 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4kwallpaper.api.Api_InterFace;
 import com.example.a4kwallpaper.api.CallbackWallpaper;
 import com.example.a4kwallpaper.data.RestAdapter;
 import com.example.a4kwallpaper.databinding.FragmentFourKBinding;
 import com.example.a4kwallpaper.main.MainActivity;
-import com.example.a4kwallpaper.main.fragments.home.adapter.AllImageAdapter;
+import com.example.a4kwallpaper.main.fragments.home.adapter.NewAdAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,24 +28,25 @@ public class FourKFragment extends Fragment {
     String filter;
     String order;
     private Call<CallbackWallpaper> callbackCall = null;
+
     public FourKFragment(MainActivity mainActivity, String filter, String order) {
         this.mainActivity = mainActivity;
-        this.filter=filter;
-        this.order=order;
+        this.filter = filter;
+        this.order = order;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = FragmentFourKBinding.inflate(inflater,container,false);
+        binding = FragmentFourKBinding.inflate(inflater, container, false);
 
         binding.shimmerLayout.setVisibility(View.VISIBLE);
         binding.shimmerLayout.startShimmer();
 
         Api_InterFace apiInterface = RestAdapter.createAPI("https://wallapp.patoliyaitsolution.com/");
 
-        callbackCall = apiInterface.getWallpapers(1,50,filter,order,"0");
+        callbackCall = apiInterface.getWallpapers(1, 50, filter, order, "0");
 
         callbackCall.enqueue(new Callback<CallbackWallpaper>() {
             @Override
@@ -56,23 +57,21 @@ public class FourKFragment extends Fragment {
 
 //                    Log.d("QQQ", "onResponse: sucess = "+response.body().posts.get(0).image_upload);
 
-                    String[] imageArray  = new String[resp.posts.size()];
-                    for(int i=0;i<resp.posts.size();i++)
-                    {
-                        imageArray[i] = "https://wallapp.patoliyaitsolution.com/upload/"+resp.posts.get(i).image_upload;
+                    String[] imageArray = new String[resp.posts.size()];
+                    for (int i = 0; i < resp.posts.size(); i++) {
+                        imageArray[i] = "https://wallapp.patoliyaitsolution.com/upload/" + resp.posts.get(i).image_upload;
                     }
 
-//                    AllImageAdapter allImageAdapter = new AllImageAdapter(mainActivity, imageArray, binding.shimmerLayout);
-//                    RecyclerView.LayoutManager manager1 = new GridLayoutManager(mainActivity, 3);
-//                    binding.rvFourK.setLayoutManager(manager1);
-//                    binding.rvFourK.setAdapter(allImageAdapter);
-//                    binding.rvFourK.setHasFixedSize(true);
+                    NewAdAdapter allImageAdapter = new NewAdAdapter(mainActivity, imageArray, binding.shimmerLayout);
+                    RecyclerView.LayoutManager manager1 = new GridLayoutManager(mainActivity, 2);
+                    binding.rvFourK.setLayoutManager(manager1);
+                    binding.rvFourK.setAdapter(allImageAdapter);
 
-                    AllImageAdapter adapter = new AllImageAdapter(mainActivity, imageArray, binding.shimmerLayout);
-                    StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
-                    binding.rvFourK.setLayoutManager(lm);
-                    binding.rvFourK.setItemAnimator(new DefaultItemAnimator());
-                    binding.rvFourK.setAdapter(adapter);
+//                    AllImageAdapter adapter = new AllImageAdapter(mainActivity, imageArray, binding.shimmerLayout);
+//                    StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+//                    binding.rvFourK.setLayoutManager(lm);
+//                    binding.rvFourK.setItemAnimator(new DefaultItemAnimator());
+//                    binding.rvFourK.setAdapter(adapter);
 
 
                 } else {

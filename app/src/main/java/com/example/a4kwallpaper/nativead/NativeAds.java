@@ -37,7 +37,7 @@ public class NativeAds
 
         // Set other ad assets.
         adView.setHeadlineView(adView.findViewById(R.id.ad_headline));
-        adView.setBodyView(adView.findViewById(R.id.ad_body));
+//        adView.setBodyView(adView.findViewById(R.id.ad_body));
         adView.setCallToActionView(adView.findViewById(R.id.ad_call_to_action));
         adView.setIconView(adView.findViewById(R.id.ad_app_icon));
 
@@ -46,12 +46,12 @@ public class NativeAds
         ((TextView) adView.getHeadlineView()).setText(nativeAd.getHeadline());
         adView.getMediaView().setMediaContent(nativeAd.getMediaContent());
 
-        if (nativeAd.getBody() == null) {
-            adView.getBodyView().setVisibility(View.INVISIBLE);
-        } else {
-            adView.getBodyView().setVisibility(View.VISIBLE);
-            ((TextView) adView.getBodyView()).setText(nativeAd.getBody());
-        }
+//        if (nativeAd.getBody() == null) {
+//            adView.getBodyView().setVisibility(View.INVISIBLE);
+//        } else {
+//            adView.getBodyView().setVisibility(View.VISIBLE);
+//            ((TextView) adView.getBodyView()).setText(nativeAd.getBody());
+//        }
 
         if (nativeAd.getCallToAction() == null) {
             adView.getCallToActionView().setVisibility(View.INVISIBLE);

@@ -2,11 +2,14 @@ package com.example.a4kwallpaper.nav_fragments.myfavorite;
 
 import android.os.Bundle;
 import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.a4kwallpaper.databinding.ActivityMyFavoriteBinding;
-import com.example.a4kwallpaper.main.fragments.home.adapter.CategoryAllAdapter;
+import com.example.a4kwallpaper.main.fragments.home.adapter.NewAdAdapter;
+import com.example.a4kwallpaper.main.mobileimage.MobileImageActivity;
 import com.example.a4kwallpaper.main.preview.PreviewActivity;
 
 public class MyFavoriteActivity extends AppCompatActivity {
@@ -50,13 +53,16 @@ public class MyFavoriteActivity extends AppCompatActivity {
 
         binding.shimmerLayout.startShimmer();
 
-        CategoryAllAdapter allImageAdapter = new CategoryAllAdapter(MyFavoriteActivity.this, imageArray, binding.shimmerLayout);
-        RecyclerView.LayoutManager manager1 = new GridLayoutManager(MyFavoriteActivity.this, 3);
+//        CategoryAllAdapter allImageAdapter = new CategoryAllAdapter(MyFavoriteActivity.this, imageArray, binding.shimmerLayout);
+//        RecyclerView.LayoutManager manager1 = new GridLayoutManager(MyFavoriteActivity.this, 3);
+//        binding.rvFavrite.setLayoutManager(manager1);
+//        binding.rvFavrite.setAdapter(allImageAdapter);
+//        binding.rvFavrite.setHasFixedSize(true);
+
+        NewAdAdapter allImageAdapter = new NewAdAdapter(MyFavoriteActivity.this, imageArray, binding.shimmerLayout);
+        RecyclerView.LayoutManager manager1 = new GridLayoutManager(MyFavoriteActivity.this, 2);
         binding.rvFavrite.setLayoutManager(manager1);
         binding.rvFavrite.setAdapter(allImageAdapter);
-        binding.rvFavrite.setHasFixedSize(true);
-
-
 
 
 //        if(!PreviewActivity.Favimage.equals(null)){
